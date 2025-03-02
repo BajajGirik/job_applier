@@ -1,6 +1,8 @@
 from playwright.async_api import async_playwright
 from utils.env_helper import get_env
 from utils.copy import copy_directory
+from playwright_stealth import stealth_async
+
 
 class WebBrowser:
     def __init__(self) -> None:
@@ -21,6 +23,10 @@ class WebBrowser:
                 "--start-maximized",
             ]
         )
+
+        self.__page = await self.__context.new_page()
+        await stealth_async(self.__page)
+
 
 
     async def destroy(self) -> None:
