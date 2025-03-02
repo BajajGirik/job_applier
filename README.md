@@ -5,7 +5,7 @@ An automation which will apply to new job postings on different platforms
 
 ## TODO:
 
-- [ ] Setup WebBrowser class to handle browser interactions
+- [x] Setup WebBrowser class to handle browser interactions (Check out https://github.com/BajajGirik/job_applier/pull/1)
 - [ ] Look into loading existing browser profiles (to avoid authenticating on different platforms)
 - [ ] If existing browser profile loading is not possible, setup platform authentication
 
