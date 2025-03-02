@@ -23,7 +23,6 @@ class WebBrowser:
         context = await playwright.chromium.launch_persistent_context(
             user_data_dir,
             channel="chrome",
-            user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36",
             headless=False,
             no_viewport=True,
             args= [
