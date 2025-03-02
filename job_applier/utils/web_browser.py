@@ -1,7 +1,6 @@
 from playwright.async_api import ElementHandle, async_playwright, Playwright, BrowserContext, Page
 from utils.env_helper import get_env
 from utils.copy import copy_directory
-from playwright_stealth import stealth_async
 
 
 class WebBrowser:
@@ -31,8 +30,6 @@ class WebBrowser:
         )
 
         page = await context.new_page()
-        await stealth_async(page)
-
 
         return cls(user_data_dir, playwright, context, page)
 
