@@ -1,4 +1,4 @@
-from playwright.async_api import async_playwright
+from playwright.async_api import ElementHandle, async_playwright
 from utils.env_helper import get_env
 from utils.copy import copy_directory
 from playwright_stealth import stealth_async
@@ -32,3 +32,11 @@ class WebBrowser:
     async def destroy(self) -> None:
         await self.__context.close()
         await self.__playwright.stop()
+
+
+    async def open(self, url: str) -> None:
+        await self.__page.goto(url)
+
+
+    async def find_element(self, selector: str) -> ElementHandle | None:
+        return await self.__page.query_selector(selector)
